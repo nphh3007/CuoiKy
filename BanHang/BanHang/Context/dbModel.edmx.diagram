@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="926b693afd8647819077c2dfd272e04f" Name="Diagram1">
+        <EntityTypeShape EntityType="DienThoaiModel.Brand" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienThoaiModel.Category" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienThoaiModel.Order" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienThoaiModel.OrderDetail" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienThoaiModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DienThoaiModel.User" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <AssociationConnector Association="DienThoaiModel.FK_Product_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="DienThoaiModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="DienThoaiModel.FK_Order_User" ManuallyRouted="false" />
+        <AssociationConnector Association="DienThoaiModel.FK_OrderDetail_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="DienThoaiModel.FK_OrderDetail_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
