@@ -35,13 +35,14 @@ namespace BanHang.Models
         [Display(Name = "Giá khuyến mãi")]
         public Nullable<double> PriceDiscount { get; set; }
 
-        [Display(Name = "Loại sản phẩm")]
+        [Display(Name = "Loại")]
         public Nullable<int> TypeId { get; set; }
 
         public string Slug { get; set; }
 
         [Display(Name = "Thương hiệu")]
         public Nullable<int> BrandId { get; set; }
+
         public Nullable<bool> Deleted { get; set; }
         public Nullable<bool> ShowOnHomePage { get; set; }
         public Nullable<int> DisplayOrder { get; set; }
@@ -50,7 +51,10 @@ namespace BanHang.Models
 
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
-
+        private HttpPostedFileBase imageUpload;
+        public HttpPostedFileBase GetImageUpload()
+        {
+           return imageUpload;
+        }
     }
 }

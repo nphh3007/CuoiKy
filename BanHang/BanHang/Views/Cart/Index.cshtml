@@ -11,7 +11,7 @@
     $(function () {
         $("#removecart").click(function () {
             var model = {};
-            //lấy id sản phẩm
+            //  lấy id của sản phẩm truy xuất vào để lấy số lượng của sản phẩm đó
             model.Id = $("#productid").val();
             $.ajax({
                 type: "POST",
@@ -114,23 +114,12 @@
                     </div> <!-- card-body.// -->
                 </div>  <!-- card .// -->
                 <div class="card">
-                    <div class="card-body">
-                        <dl class="dlist-align">
-                            <dt>Total price:</dt>
-                            <dd class="text-right">USD 568</dd>
-                        </dl>
-                        <dl class="dlist-align">
-                            <dt>Discount:</dt>
-                            <dd class="text-right">USD 658</dd>
-                        </dl>
+                    <div class="card-body">                      
                         <dl class="dlist-align">
                             <dt>Thành tiền:</dt>
-                            <dd class="text-right  h5"><strong>$1,650</strong></dd>
+                            <dd class="text-right  h5"><strong>5.000.000</strong></dd>
                         </dl>
-                        <hr>
-                        <p class="text-center mb-3">
-                            <img src="images/misc/payments.png" height="26">
-                        </p>
+                        <hr>                      
 
                     </div> <!-- card-body.// -->
                 </div>  <!-- card .// -->

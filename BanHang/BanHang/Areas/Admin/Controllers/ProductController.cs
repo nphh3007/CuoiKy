@@ -157,5 +157,5 @@ namespace BanHang.Areas.Admin.Controllers
         ViewBag.ListProductType = objCommon.ToSelectList(dtProductType, "Id", "Name");
 
         }
-}
+    }
 }

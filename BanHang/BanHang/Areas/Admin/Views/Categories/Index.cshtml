@@ -1,0 +1,113 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<BanHang.Context.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 12px 18px;
+        text-decoration: none;
+    }
+        /* set the style for the active class */
+        .pagination a.active {
+            background-color: dodgerblue;
+            color: white;
+            /*Circle Design with CSS*/
+            border-radius: 50%;
+        }
+        /* add background color when user hovers on inactive class */
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+            border-radius: 50%;
+        }
+</style>
+
+<h2>Quản lý loại sản phẩm</h2>
+@using (Html.BeginForm("Index", "Category", FormMethod.Get))
+{
+    <p>
+        Tìm tên sản phẩm: @Html.TextBox("SeachString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Tìm kiếm" />
+    </p>
+}
+<p>
+    @Html.ActionLink("Tạo mới", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Avatar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Slug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().ShowOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().DisplayOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Deleted)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().CreatedOnUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstOrDefault().UpdatedOnUtc)
+        </th>
+        <th>
+            Chức năng
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Avatar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisplayOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deleted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOnUtc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedOnUtc)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.Id }) 
+                
+            </td>
+        </tr>
+    }
+
+</table>
+
+Trang @(Model.PageCount<Model.PageNumber ? 0:Model.PageNumber) of @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))

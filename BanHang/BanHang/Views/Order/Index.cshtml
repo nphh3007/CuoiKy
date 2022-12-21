@@ -22,6 +22,15 @@
         <th>
             @Html.DisplayNameFor(model => model.Order.CreateOnUtc)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.User.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.User.Adress)
+        </th>
+        <th>
+           Chức năng
+        </th>
         <th></th>
     </tr>
 
@@ -39,8 +48,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Order.CreateOnUtc)
         </td>
-        <td>            
-            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.User.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.User.Adress)
+        </td>
+        <td>
+            @Html.ActionLink("Xóa", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

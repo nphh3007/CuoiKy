@@ -95,8 +95,7 @@ namespace BanHang.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(Product category)
         {
-            var lstCategory = dienThoai.Categories.Where(n => n.Id ==
-           category.Id).FirstOrDefault();
+            var lstCategory = dienThoai.Categories.Where(n => n.Id ==category.Id).FirstOrDefault();
             lstCategory.Name = category.Name;
             lstCategory.Slug = category.Slug;
             lstCategory.DisplayOrder = category.DisplayOrder;
@@ -106,8 +105,8 @@ namespace BanHang.Areas.Admin.Controllers
         // xóa loại sản phẩm khỏi danh sách
         public ActionResult Delete(int id)
         {
-            var lstProduct = dienThoai.Products.Where(n => n.Id == id).FirstOrDefault();
-            dienThoai.Products.Remove(lstProduct);
+            var lstCategory = dienThoai.Categories.Where(n => n.Id == id).FirstOrDefault();
+            dienThoai.Categories.Remove(lstCategory);
             dienThoai.SaveChanges();
             return RedirectToAction("Index");
         }

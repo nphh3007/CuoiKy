@@ -1,0 +1,61 @@
+﻿@model BanHang.Context.OrderDetail
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản lý hóa đơn</h2>
+
+<div>
+    <h4>Hóa đơn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.User.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.User.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.User.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Order.User.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Order.User.Adress)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

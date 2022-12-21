@@ -5,14 +5,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Sửa Sản Phẩm</h2>
 
 @using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Product</h4>
+        <h4>Sản phẩm</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Id)
@@ -96,7 +96,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.Deleted, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -104,9 +104,9 @@
                     @Html.ValidationMessageFor(model => model.Deleted, "", new { @class = "text-danger" })
                 </div>
             </div>
-        </div>
+        </div>*@
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.ShowOnHomePage, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
@@ -122,9 +122,9 @@
                 @Html.EditorFor(model => model.DisplayOrder, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.DisplayOrder, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
-        <div class="form-group">
+        @*<div class="form-group">
             @Html.LabelFor(model => model.CreatedOnUtc, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.CreatedOnUtc, new { htmlAttributes = new { @class = "form-control" } })
@@ -138,7 +138,7 @@
                 @Html.EditorFor(model => model.UpdatedOnUtc, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UpdatedOnUtc, "", new { @class = "text-danger" })
             </div>
-        </div>
+        </div>*@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

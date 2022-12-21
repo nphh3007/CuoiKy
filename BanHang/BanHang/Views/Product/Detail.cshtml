@@ -8,7 +8,7 @@
     $(function () {
         $("#addtocart").click(function () {
             var model = {};
-            //lấy id sản phẩm
+            //  lấy id của sản phẩm truy xuất vào để lấy số lượng của sản phẩm đó
             model.Id = @Model.Id;
             // lấy số lượng đặt hàng
             model.Quantity = $("#ipQuantity").val();
@@ -35,10 +35,8 @@
 <section class="py-3 bg-light">
     <div class="container">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">Category name</a></li>
-            <li class="breadcrumb-item"><a href="#">Sub category</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Items</li>
+            <li class="breadcrumb-item"><a href="~/home">Home</a></li>
+            
         </ol>
     </div>
 </section>
@@ -85,42 +83,42 @@
                     </div> <!-- rating-wrap.// -->
 
                     <div class="mb-3">
-                        <var class="price h4">@Model.Price</var>
-                        <span class="text-muted">USD 562.65 incl. VAT</span>
+
+                        <var class="price h4">Giá tiền: @Model.Price</var>
+                        <span class="text-muted">VNĐ</span>
+
                     </div> <!-- price-detail-wrap .// -->
 
                     <p>
                         @Model.ShortDes
                     </p>
 
-
                     <dl class="row">
-                        <dt class="col-sm-3">Manufacturer</dt>
-                        <dd class="col-sm-9"><a href="#">Great textile Ltd.</a></dd>
+                        <dt class="col-sm-3">Năm sản xuất:</dt>
+                        <dd class="col-sm-9">Made VietNam</dd>
 
-                        <dt class="col-sm-3">Article number</dt>
-                        <dd class="col-sm-9">596 065</dd>
+                        <dt class="col-sm-3">Số lượng sản phẩm:</dt>
+                        <dd class="col-sm-9">600</dd>
 
-                        <dt class="col-sm-3">Guarantee</dt>
-                        <dd class="col-sm-9">2 year</dd>
+                        <dt class="col-sm-3">Bảo hành</dt>
+                        <dd class="col-sm-9">2 năm</dd>
 
-                        <dt class="col-sm-3">Delivery time</dt>
-                        <dd class="col-sm-9">3-4 days</dd>
+                        <dt class="col-sm-3">Đổi trả</dt>
+                        <dd class="col-sm-9">3-4 ngày</dd>
 
-                        <dt class="col-sm-3">Availabilty</dt>
-                        <dd class="col-sm-9">in Stock</dd>
+                      
                     </dl>
 
                     <div class="form-row  mt-4">
                         <div class="form-group col-md flex-grow-0">
                             <div class="input-group mb-3 input-spinner">
                                 @*<div class="input-group-prepend">
-                                        <button class="btn btn-light" type="button" id="button-plus"> + </button>
-                                    </div>*@
+                        <button class="btn btn-light" type="button" id="button-plus"> + </button>
+                    </div>*@
                                 <input type="text" id="ipQuantity" class="form-control" value="1">
                                 @*<div class="input-group-append">
-                                        <button class="btn btn-light" type="button" id="button-minus"> &minus; </button>
-                                    </div>*@
+                        <button class="btn btn-light" type="button" id="button-minus"> &minus; </button>
+                    </div>*@
                             </div>
                         </div> <!-- col.// -->
                         <div class="form-group col-md">
